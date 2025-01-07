@@ -1,9 +1,18 @@
 class Data:
     def __init__(self):
-        self.entries = []
+        self.name = "april"
+        self.age = 0
 
-    def add_entry(self, name, age):
-        self.entries.append({"name": name, "age": age})
+    def set_name(self, name):
+        self.name = name
 
-    def get_entries(self):
-        return self.entries
+    def set_age(self, age):
+        if age < 0:
+            raise ValueError("Usia tidak boleh negatif")
+        self.age = age
+
+    def get_name(self):
+        return self.name
+
+    def get_age(self):
+        return self.age
