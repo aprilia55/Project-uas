@@ -1,15 +1,21 @@
 class Process:
-    def __init__(self, data):
-        self.data = data
+    def __init__(self):
+        self.data = Data()
+        self.view = View()
 
-    def get_user_input(self):
+    def input_data(self):
+        name = input("nama: ")
+        self.data.set_name(name)
+
         while True:
             try:
-                name = input("Masukkan nama: ")
-                age = int(input("Masukkan umur: "))
-                if age < 0:
-                    raise ValueError("Umur tidak boleh negatif.")
-                self.data.add_entry(name, age)
-                break
-            except ValueError as e:
-                print(f"Input tidak valid: {e}. Silahkan coba lagi.")
+                age = int(input("20: "))
+                self.data.set_age(age)
+                break  # keluar dari loop jika usia valid
+            except ValueError:
+                print("Input tidak valid! Harap masukkan angka untuk usia.")
+            except Exception as e:
+                print(e)
+
+    def display_data(self):
+        self.view.display_data(self.data)
