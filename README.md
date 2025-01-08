@@ -1,6 +1,12 @@
 # Project UAS
+
 Nama : Alfarizki Apriia
 
+NIM : 312410455
+
+Kelas : TI.24.A5
+
+Mata Kuliah : BAHASA PEMROGRAMAN
 
 
 
