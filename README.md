@@ -107,16 +107,97 @@ def display_data(self, data):
 
 4. Baris Penutup: Menampilkan garis horizontal untuk menutup tabel.
    
-   Manfaat Kode
-   Kelas View memisahkan logika presentasi (tampilan) dari logika bisnis 
-   (pengelolaan data). Hal ini membuat kode lebih modular dan lebih mudah 
-   dipelihara, karena tugas untuk memformat dan menampilkan data dikelola secara 
-   terpisah dari pengelolaan data itu sendiri.
+* Manfaat Kode
+Kelas View memisahkan logika presentasi (tampilan) dari logika bisnis 
+(pengelolaan data). Hal ini membuat kode lebih modular dan lebih mudah 
+dipelihara, karena tugas untuk memformat dan menampilkan data dikelola secara 
+terpisah dari pengelolaan data itu sendiri.
 
 
+## Kelas `Process`
+Kelas Process bertanggung jawab untuk:
 
+1. Mengelola proses pengambilan input data dari pengguna.
+2. Menghubungkan data (kelas Data) dan tampilan (kelas View).
+3. Mengorganisir alur kerja secara terstruktur.
+   
+## 1. Konstruktor `(__init__)`
+```phython
+def __init__(self):
+    self.data = Data()
+    self.view = View()
+def __init__(self):
+    self.data = Data()
+    self.view = View()
+```
+### Apa yang dilakukan?
 
+* Konstruktor adalah metode khusus yang otomatis dipanggil saat objek dari kelas Process dibuat.
+* Dua atribut dideklarasikan:
+    * self.data: Membuat instance dari kelas Data untuk menyimpan data.
+    * self.view: Membuat instance dari kelas View untuk menampilkan data.
+### Kenapa penting?
 
+* Konstruktor ini menginisialisasi dua objek, data dan view, yang akan digunakan dalam metode lainnya untuk menjalankan tugas pengelolaan data dan tampilan.
+
+## 2. Metode input_data
+```phython
+def input_data(self):
+    name = input("nama: ")
+    self.data.set_name(name)
+
+    while True:
+        try:
+            age = int(input("20: "))
+            self.data.set_age(age)
+            break  # keluar dari loop jika usia valid
+        except ValueError:
+            print("Input tidak valid! Harap masukkan angka untuk usia.")
+        except Exception as e:
+            print(e)
+```
+Fungsi Metode
+Metode ini bertugas untuk mengambil input dari pengguna dan menyimpannya ke dalam objek data.
+
+Detail Per Bagian
+
+1. Input Nama
+   
+```python
+name = input("nama: ")
+self.data.set_name(name)
+```
+* Apa yang dilakukan?
+* Meminta pengguna memasukkan nama melalui keyboard.
+* Nama tersebut disimpan ke atribut name di dalam objek data menggunakan metode * 
+  set_name().
+
+2. Input Usia dengan Validasi
+```python
+while True:
+    try:
+        age = int(input("20: "))
+        self.data.set_age(age)
+        break
+    except ValueError:
+        print("Input tidak valid! Harap masukkan angka untuk usia.")
+    except Exception as e:
+        print(e)
+```
+1. Apa yang dilakukan?
+* Meminta pengguna memasukkan usia melalui keyboard dalam bentuk angka.
+  
+* Validasi:
+  
+* int(input("20: ")): Mengonversi input menjadi bilangan bulat.
+* Jika konversi berhasil dan usia valid, usia tersebut disimpan di atribut age 
+  dalam objek data menggunakan metode set_age().
+* Jika konversi gagal (input bukan angka), ValueError akan ditangkap, dan pesan 
+  error ditampilkan.
+* Looping:
+* Menggunakan while True agar proses pengambilan input terus berulang sampai 
+  pengguna memberikan input yang valid.
+  break: Keluar dari loop jika usia berhasil diatur tanpa error.
 
 
 
