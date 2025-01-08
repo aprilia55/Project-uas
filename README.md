@@ -70,6 +70,50 @@ return self.age
 Fungsi Kode Ini
 Kode ini dapat digunakan sebagai dasar untuk merepresentasikan entitas data sederhana dengan dua atribut: name dan age. Hal ini cocok untuk menyimpan data pengguna atau informasi entitas lainnya yang membutuhkan validasi sederhana.
 
+## Penjelasan Kode: Kelas View
+Kelas View bertanggung jawab untuk menampilkan data dengan format tabel sederhana ke konsol. Kelas ini hanya memiliki satu metode, yaitu display_data.
+
+1. Metode display_data
+   
+```python
+def display_data(self, data):
+    print("=================================")
+    print("| Nama | Usia                  |")
+    print("=================================")
+    print(f"| {data.get_name():<4} | {data.get_age():<20} |")
+    print("=================================")
+```
+* Parameter :
+
+* data: Objek yang diberikan sebagai argumen harus memiliki metode get_name() dan get_age(). Dalam konteks ini, objek dari kelas Data dapat digunakan.
+  
+* Fungsi Metode:
+
+* Menampilkan data atribut name dan age dari objek data ke konsol dalam format 
+  tabel yang terstruktur.
+  
+* Langkah-langkah:
+
+1. Baris Header: Menampilkan garis horizontal = untuk memisahkan bagian atas tabel.
+2. Header Kolom: Baris dengan label kolom Nama dan Usia.
+3. Isi Data: Mengambil nilai name dan age menggunakan metode get_name() dan 
+   get_age() dari objek data, kemudian menampilkan dalam format tabel.
+   
+   {data.get_name():<4}: Memformat nama agar rata kiri dengan lebar minimum 4 
+   karakter.
+
+   {data.get_age():<20}: Memformat usia agar rata kiri dengan lebar minimum 20 
+   karakter.
+
+4. Baris Penutup: Menampilkan garis horizontal untuk menutup tabel.
+   
+   Manfaat Kode
+   Kelas View memisahkan logika presentasi (tampilan) dari logika bisnis 
+   (pengelolaan data). Hal ini membuat kode lebih modular dan lebih mudah 
+   dipelihara, karena tugas untuk memformat dan menampilkan data dikelola secara 
+   terpisah dari pengelolaan data itu sendiri.
+
+
 
 
 
