@@ -1,6 +1,6 @@
 # Project UAS
 
-Nama : Alfarizki Apriia
+Nama : Alfarizki Aprilia Putri
 
 NIM : 312410455
 
@@ -10,6 +10,9 @@ Mata Kuliah : BAHASA PEMROGRAMAN
 
 # Daftar Link Youtube
 - [video Tutorial](https://youtu.be/zARyDQw_x0Y?si=CVD6HMswQq7wjxHE)
+
+##  Kelas Data
+Kelas Data adalah sebuah cetak biru (blueprint) untuk membuat objek yang memiliki atribut name dan age, serta metode untuk mengakses dan memodifikasi atribut tersebut.
 ##  1. Konstruktor ```(__init__)```
 
 ```python
